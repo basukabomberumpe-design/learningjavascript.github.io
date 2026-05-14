@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>testing</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #btn {
+            font-size: 7rem;
+            border-radius: 100%;
+            height: 15rem;
+            width: 15rem;
+            cursor: pointer;
+        }
+
+        .hey {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="btn">0</button>
+
+<div class="hey">
+    <button id="one">cpc +1 (costs 50)</button>
+</div>
+
+<script>
+let count = 0;
+let clickValue = 1;
+
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", () => {
+    count += clickValue;
+    btn.innerText = count;
+    localStorage.setItem("cookies", cookies)
+});
+</script>
+
+<script>
+const one = document.getElementById("one");
+
+one.addEventListener("click", () => {
+    if (cookies >= 50) {
+        cookies -= 50;
+        cpc += 1;
+        localStorage.setItem("cpc", cpc)
+        document.getElementById("btn").innerText = count;
+    }
+});
+</script>
+
+</body>
+</html>
