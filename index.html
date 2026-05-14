@@ -35,15 +35,16 @@
 </div>
 
 <script>
-let count = 0;
-let clickValue = 1;
+let cookies = parseInt(localStorage.getItem("cookies")) || 0;
+let cpc = parseInt(localStorage.getItem("cpc")) || 1;
 
 const btn = document.getElementById("btn");
+btn.innerText = cookies;
 
 btn.addEventListener("click", () => {
-    count += clickValue;
-    btn.innerText = count;
-    localStorage.setItem("cookies", cookies)
+    cookies += cpc;
+    btn.innerText = cookies;
+    localStorage.setItem("cookies", cookies);
 });
 </script>
 
@@ -54,8 +55,9 @@ one.addEventListener("click", () => {
     if (cookies >= 50) {
         cookies -= 50;
         cpc += 1;
-        localStorage.setItem("cpc", cpc)
-        document.getElementById("btn").innerText = count;
+        localStorage.setItem("cookies", cookies);
+        localStorage.setItem("cpc", cpc);
+        document.getElementById("btn").innerText = cookies;
     }
 });
 </script>
